@@ -36,5 +36,8 @@
 	"dependencies": {
 		"@supabase/supabase-js": "^2.46.1",
 		"@vercel/analytics": "^1.4.0"
+	},
+	"allowScripts": {
+		"esbuild@0.21.5": true
 	}
 }
