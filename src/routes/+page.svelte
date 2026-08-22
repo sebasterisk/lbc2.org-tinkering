@@ -2,6 +2,9 @@
 	import Carousel from 'svelte-carousel';
 	import Navbar from '$lib/components/navbar.svelte';
 	import { enhance } from '$app/forms';
+	import InfoBox from '$lib/components/InfoBox.svelte';
+    
+	let w = 0;
 
 	let carousel: any; // for calling methods of the carousel instance
 
@@ -9,167 +12,61 @@
 		carousel.goToNext();
 	};
 
-	let imgNum = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+	let imgNum = [1, 2, 3, 4, 5, 6, 7, 8];
 
-	/** @type {import('./$types').ActionData} */
-	export let form;
 </script>
 
-<Navbar />
-<div class="flex flex-col lg:flex-row gap-8 justify-center items-center bg-no-repeat bg-cover bg-center">
-    <img src="/images/lbc2xcoloredtemp1.png" alt="Enlarged LBC2X Logo" class="rounded p-10" />
-	<div class="flex flex-col m-5 items-center">
-		<h1 class="text-yellow-100 text-5xl font-black text-center">
-			<section class="bg-gradient-to-t from-yellow-200 to-yellow-100 bg-clip-text text-transparent">
-				Loyola Blakefield
-			</section>
-			 Cyber Challenge
-		</h1>
-        <p class="text-white text-3xl text-center mt-3">March 20, 2027 @ Loyola Blakefield</p>
-		<!-- <p class="text-white text-3xl text-center mt-8">9:00am - 3:00pm</p>
-		<p class="text-white text-3xl text-center mt-8">Doors open @ 8:30am</p> -->
-		<!--<button class="bg-yellow-200 text-blue-100 font-black text-xl mx-auto p-2 px-16 rounded-lg border-4 border-yellow-200 mt-6 hover:bg-blue-200 hover:text-yellow-200 hover:border-yellow-200"><a href="/sign-up">Sign Up</a></button>-->
-	</div>
-	<!-- <img src="/images/heroLBC2x.jpg" alt="Cover" class="h-auto w-auto lg:h-96 rounded" /> -->
-</div>
-<div class="bg-blue-100 mt-8">
-	<img src="/images/wavesOpacity.svg" alt="divider" class="h-auto w-screen" />
-	<div
-		class="text-white text-center text-lg font-light italic bg-blue-200 my-6 mx-20 p-8 rounded border-l-4 border-yellow-200"
-	>
-		<p>
-			“Some of our students were feeling pretty intimidated at the beginning of the day, and by the
-			end they had gained a lot of confidence and had a lot of fun largely due to help and
-			encouragement from the yellow shirts.” – Faculty Member
-		</p>
-	</div>
-	<img src="/images/wavesOpacity.svg" alt="divider" class="h-auto w-screen rotate-180" />
-</div>
-<div class="mt-8 mx-20">
-	<h2 class="text-yellow-200 text-4xl font-black text-center">Frequently Asked Questions</h2>
-	<div class="text-center mt-16">
-		<h3 class="text-yellow-100 text-2xl font-bold mt-4">What is LBC2?</h3>
-		<p class="text-white text-xl mt-2">
-			LBC2 is a cybersecurity competition run by the Loyola Blakefield Cyber Science Informatics
-			program, or LBCSI. Competitors will learn cryptography skills, digital forensics, systems
-			hardening, and much more through hands-on, interactive challenges in a "Capture the Flag" (CTF)
-			format.
-		</p>
-	</div>
-	<div class="text-center mt-8">
-		<h3 class="text-yellow-100 text-2xl font-bold mt-4">What if I'm new to all of this?</h3>
-		<p class="text-white text-xl mt-2">
-			No worries! LBC2 is, at its core, a student learning experience. The program will have
-            two tracks, a guided "Learning" track and a free-for-all "Competitive" track, ensuring that
-            we'll meet you where you're at.
-		</p>
-	</div>
-	<div class="text-center mt-8">
-		<h3 class="text-yellow-100 text-2xl font-bold mt-4">What should I bring?</h3>
-		<p class="text-white text-xl mt-2">The guided "Learning" track just needs a laptop with an Internet browser and a charging table. We also reccommend the "Competitive" track to have Administrator access to their laptops, access to a command line, and Kali Linux tools.</p>
-	</div>
-	<div class="text-center mt-8">
-		<h3 class="text-yellow-100 text-2xl font-bold mt-4">How much does it cost?</h3>
-		<p class="text-white text-xl mt-2">
-			The competition is entirely FREE, all thanks to our sponsors.
-		</p>
-	</div>
-</div>
-<div class="bg-blue-100">
-	<img src="/images/wavesOpacity.svg" alt="divider" class="h-auto w-screen" />
-	<h2 class="text-yellow-200 text-4xl font-black mt-8 mx-20 text-center">
-		Check Out our Photos from Last Competition!
-	</h2>
-	<Carousel
-		bind:this={carousel}
-		particlesToShow={5}
-		autoplayDuration={0}
-		duration={7000}
-		autoplay
-		timingFunction="linear"
-		dots={false}
-		arrows={false}
-		swiping={false}
-	>
-		{#each imgNum as index}
-			<img
-				src={`/images/2025/image${index}.jpeg`}
-				alt={`Image ${index}`}
-				class="my-8 object-cover rounded ml-4"
-			/>
-		{/each}
-	</Carousel>
-	<img src="/images/wavesOpacity.svg" alt="divider" class="h-auto w-screen rotate-180" />
-</div>
-<h2 class="text-yellow-200 text-4xl font-black mt-8 mx-20 text-center">Loyola Blakefield CSI</h2>
-<div class="grid grid-cols-2 justify-center items-center text-center max-lg:grid-cols-none">
-	<img src="/images/lbcsiLogo.png" alt="LBCSI Logo" class="mx-auto mt-8 max-lg:hidden" />
-	<div class="mr-20 max-lg:mx-20">
-		<p class="text-white text-xl">
-			The Loyola Blakefield Cyber Science Initiative (LBCSI) is a student-run group directed by
-			Steve Morrill, Director of Technology & Cyber Science at Loyola Blakefield. The vision for
-			this competition is to bring new opportunities to all students in the country, in addition to
-			connecting the business world with a diverse talent pool. LBCSI has become the international
-			leader in Cyber education for students in middle and high school.
-		</p>
-		<button
-			class="bg-yellow-200 text-blue-100 font-black text-xl mx-auto p-2 px-16 rounded-lg border-4 border-yellow-200 mt-6 hover:bg-blue-200 hover:text-yellow-200 hover:border-yellow-200"
-			><a href="/lbcsi">Learn More</a></button
-		>
-		<h3 class="text-yellow-100 text-2xl font-bold mt-4">Contact Us</h3>
-		<p class="text-white text-xl mt-2">
-			Head of LBCSI - <a
-				href="mailto:smorrill@loyolablakefield.org"
-				class="underline hover:text-yellow-100">Steve Morrill</a
-			>
-		</p>
-		<p class="text-white text-xl mt-2">
-			Support Staff - <a href="mailto:lbc2staff@gmail.com" class="underline hover:text-yellow-100"
-				>lbc2staff@gmail.com</a
-			>
-		</p>
-		<p class="text-white text-xl mt-2">
-			Product Development Team - 
-			<a href="mailto:snrugas2027@loyolablakefield.org" class="underline hover:text-yellow-100">Sebastian Rugas '27</a>,
-			<a href="mailto:atbossle2027@loyolablakefield.org" class="underline hover:text-yellow-100">Aidan Bossle '27</a>
-		</p>
-	</div>
-</div>
-<div class="bg-blue-100">
-	<img src="/images/wavesOpacity.svg" alt="divider" class="h-auto w-screen" />
-	<h2 class="text-yellow-200 text-4xl font-black mt-8 mx-20 text-center">Sponsors</h2>
-	<h3 class="text-yellow-100 text-2xl font-bold mt-4 mx-20 text-center">
-		Thank you to our sponsors. If you are interested in sponsoring LBC2, please contact <a
-			href="mailto:smorrill@loyolablakefield.org"
-			class="underline">Steve Morrill</a
-		>.
-	</h3>
-	<img src="/images/sponsors.png" alt="sponsors" class="mx-auto mt-8" />
-	<img src="/images/wavesOpacity.svg" alt="divider" class="h-auto w-screen rotate-180" />
-</div>
-<!-- <div>
-	<h2 class="text-yellow-200 text-4xl font-black mt-8 mx-20 text-center">Newsletter</h2>
-	<form method="POST" action="?/newsletter" use:enhance>
-		<div class="flex flex-col gap-4 justify-center items-center py-8">
-			<div class="flex flex-col items-start">
-				<label for="email" class="text-yellow-200 text-xl text-right">Email</label>
-				<input
-					type="email"
-					id="email"
-					name="email"
-					placeholder="Email Address"
-					class="bg-yellow-100 text-blue-200 p-3 rounded-lg w-120"
-				/>
-				{#if form?.email_missing}<p class="text-error">Email is required</p>{/if}
-				{#if form?.email_invalid}<p class="text-error">Enter a valid email</p>{/if}
-				{#if form?.email_exists}<p class="text-error">
-						Email has already joined the newsletter
-					</p>{/if}
-			</div>
-			<button
-				class="bg-yellow-200 text-blue-100 text-xl font-black p-2 px-16 rounded-lg border-4 border-yellow-200 hover:bg-blue-200 hover:text-yellow-200 hover:border-yellow-200"
-				>Join Newsletter</button
-			>
+<div class="bg-[url('/images/pattern.png')] bg-center -mx-8 p-8 text-2xl">
+	<h1 class="lg:text-6xl md:text-5xl text-4xl tracking-widest text-center my-3">
+		<b>LOYOLA BLAKEFIELD</b> 
+		<br/> 
+		<span class="text-yellow-100">CYBER COMPETITION</span>
+	</h1>
+
+	<div class="flex md:flex-row flex-col items-center text-center md:gap-4">
+		<div>
+			MARCH 20 2027
 		</div>
-	</form>
-</div> -->
+		<hr class="flex-1">
+		<div>
+			LOYOLA BLAKEFIELD 
+		</div>
+		<hr class="flex-1">
+		<div>
+			KNOTT HALL 
+		</div>
+	</div>
+</div>
+
+<div class="text-2xl md:text-3xl my-4 -mx-8 p-3 px-8 text-blue-700 bg-blue-200">
+	> REGISTRATION OPENING SOON!
+</div>
+
+<div bind:clientWidth={w}>
+	<Carousel
+			bind:this={carousel}
+			particlesToShow={Math.floor(w/300)}
+			autoplayDuration={0}
+			duration={7000}
+			autoplay
+			timingFunction="linear"
+			dots={false}
+			arrows={false}
+			swiping={false}
+		>
+			{#each imgNum as index}
+				<img
+					src={`/images/2026/${index}.JPG`}
+					alt={`Image ${index}`}
+					class="my-8 object-contain ml-3"
+				/>
+			{/each}
+	</Carousel>
+</div>
+
+<div>
+	<div class="text-2xl my-4 text-blue-50">
+		> THANKS TO OUR SPONSORS
+	</div>
+	(the sponsors go here)
+</div>

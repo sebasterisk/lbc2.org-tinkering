@@ -10,8 +10,16 @@ export default {
       },
       'blue': {
         'placeholder': '#33475690',
-        100: '#334756',
-        200: '#293241',
+        50: '#cacde3',
+        100: '#b9b8ff',
+        200: '#5e7ccf',
+        300: '#2144a7',
+        400: '#0e2872',
+        500: '#091a4b',
+        600: '#04133a',
+        700: '#020c27',
+        800: '#000010',
+        900: '#000004',
       },
       'error': '#FF0000',
     },
@@ -29,6 +37,7 @@ export default {
     extend: {
       dropShadow: {
         'dark': '0 3px 2px rgba(0, 0, 0, 0.25)',
+        'glow': '0 0 8px rgba(17, 0, 255, 0.50)',
       },
       textColor: {
         'transparent': 'transparent',
