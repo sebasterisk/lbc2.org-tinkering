@@ -1,12 +1,12 @@
 <script>
 	import InfoBox from "$lib/components/InfoBox.svelte";
-    import { onMount } from "svelte";
+  import { onMount } from "svelte";
 
-    onMount(() => {
-    // Check if Tally is loaded and load embeds
-    if (window.Tally) {
-      window.Tally.loadEmbeds();
-    }
+  onMount(() => {
+  // Check if Tally is loaded and load embeds
+  if (window.Tally) {
+    window.Tally.loadEmbeds();
+  }
   });
 </script>
 

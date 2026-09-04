@@ -1,8 +1,5 @@
 <script lang="ts">
-	import Carousel from 'svelte-carousel';
-	import Navbar from '$lib/components/navbar.svelte';
-	import { enhance } from '$app/forms';
-	import InfoBox from '$lib/components/InfoBox.svelte';
+	import Marquee from 'svelte-fast-marquee';
     
 	let w = 0;
 
@@ -38,35 +35,23 @@
 	</div>
 </div>
 
-<div class="text-2xl md:text-3xl my-4 -mx-8 p-3 px-8 text-blue-700 bg-blue-200">
-	> REGISTRATION OPENING SOON!
+<div class="flex text-2xl md:text-3xl my-4 -mx-8 p-3 px-8 text-blue-700 bg-blue-200">
+	<div class="flex-1">
+		> REGISTRATION OPEN <b>NOW!</b>
+	</div>
+	<div>
+		<a href="register" class="p-3 bg-yellow-100 border-4 border-yellow-200"> REGISTER </a>
+	</div>
 </div>
 
-<div bind:clientWidth={w}>
-	<Carousel
-			bind:this={carousel}
-			particlesToShow={Math.floor(w/300)}
-			autoplayDuration={0}
-			duration={7000}
-			autoplay
-			timingFunction="linear"
-			dots={false}
-			arrows={false}
-			swiping={false}
-		>
-			{#each imgNum as index}
-				<img
-					src={`/images/2026/${index}.JPG`}
-					alt={`Image ${index}`}
-					class="my-8 object-contain ml-3"
-				/>
-			{/each}
-	</Carousel>
+<div class="my-6 -mx-8">
+	<Marquee direction="left" speed='60' gradientColor="#000010" gradientWidth="40px">
+		{#each imgNum as num}
+			<img src={`/images/2026/${num}.JPG`} alt="Event" class="h-32 md:h-48 ml-4" />
+		{/each}
+	</Marquee>
 </div>
 
 <div>
-	<div class="text-2xl my-4 text-blue-50">
-		> THANKS TO OUR SPONSORS
-	</div>
-	(the sponsors go here)
+	
 </div>
