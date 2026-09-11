@@ -5,7 +5,7 @@ export default {
     colors: {
       'white': '#FFFFFF',
       'yellow': {
-        100: '#FFE6AE',
+        100: '#facc7d',
         200: '#F0A500',
       },
       'blue': {
