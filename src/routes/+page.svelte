@@ -30,8 +30,13 @@
 		</div>
 		<hr class="flex-1">
 		<div>
-			KNOTT HALL 
+			8 AM - 3 PM
 		</div>
+	</div>
+
+	<div class="flex md:flex-row md:gap-0 flex-col gap-2 justify-center items-center mt-10 text-center">
+		<span>PRESENTED BY</span> 
+		<img src="/images/sponsors/darkwolf.png" alt="Dark Wolf Solutions" class="w-96 p-0 m-0">
 	</div>
 </div>
 
