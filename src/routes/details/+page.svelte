@@ -29,7 +29,10 @@
 <h2 class="text-3xl mt-5 font-bold">
 	Featured Presentations
 </h2>
-
+<p class="max-w-prose text-blue-50">
+	In addition to our CTF challenges, LBC2 brings together presentations and activities
+	created by our students and partners for all attendees to check out.
+</p>
 <div class="p-3 my-4 border-blue-400 border-2 border-dashed">
 	<h3 class="text-2xl font-semibold">> IoT CITY: MARK IV</h3>
 	<p class="max-w-prose text-blue-50">
@@ -45,12 +48,11 @@
 </div>
 
 <div class="p-3 my-4 border-blue-400 border-2 border-dashed">
-	
 	<h3 class="text-2xl font-semibold">> NCF Escape Room</h3>
 	<p class="max-w-prose text-blue-50">
 		This year, LBC2 will host the National Cryptologic Foundation's Cyber Escape Room. 
 		Competitors will solve cryptologic clues and puzzles to break into a computer under 
 		a time restraint. To learn more about what the National Cryptologic Foundation does, 
-		go to cryptologicfoundation.org.
+		go to <a class="text-blue-200 underline" href="http://cryptologicfoundation.org">cryptologicfoundation.org</a>.
 	</p>
 </div>
