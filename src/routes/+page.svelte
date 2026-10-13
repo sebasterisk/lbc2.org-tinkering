@@ -30,7 +30,11 @@
 		</div>
 		<hr class="flex-1">
 		<div>
-			8 AM - 3 PM
+			9 AM - 4 PM
+		</div>
+		<hr class="flex-1">
+		<div>
+			DOORS OPEN AT 8:30 AM
 		</div>
 	</div>
 
