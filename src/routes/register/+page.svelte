@@ -15,3 +15,4 @@
 </svelte:head>
 
 <iframe data-tally-src="https://tally.so/embed/WOa2bR?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="2050" frameborder="0" marginheight="0" marginwidth="0" title="LBC2X Sign Up"></iframe>
+<p class="text-blue-300 text-sm">Can't see the form? <a class="underline" href="https://tally.so/r/WOa2bR">Click here.</a></p>
